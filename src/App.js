@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useContext, useState } from 'react';
+import { BrowserRouter as Router} from 'react-router-dom';
+import Footer from './components/UI/Footer';
+import Header from './components/UI/Header';
+import Cart from './components/Cart/Cart';
+import CartProvider from './Store/CartProvider';
+import PageRoutes from './Routes/PageRoutes';
+import CartContext from './Store/CartContext';
 function App() {
+const [cartShown, setCartShown] = useState(false);
+
+ const ctx = useContext(CartContext);
+ const isLogged = ctx.isLoggedIn;
+ 
+ console.log(isLogged);
+  const hideCartHandle = () => {
+    setCartShown(false);
+    
+  };
+
+  const showCartHandler = () => {
+    setCartShown(true);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+      <Router>
+        <div className="app-container">
+          {cartShown && <Cart onClose={hideCartHandle} />}
+          <Header onClick={showCartHandler} onClose={hideCartHandle}/>
+           <PageRoutes/>
+        </div>
+        <Footer />
+      </Router>
+    </CartProvider>
   );
 }
 

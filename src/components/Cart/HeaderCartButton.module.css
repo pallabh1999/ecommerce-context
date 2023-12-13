@@ -1,0 +1,38 @@
+.button {
+    cursor: pointer;
+    font: inherit;
+    border: 2px solid rgb(206, 189, 189);
+    background-color: #0a21ee;
+    color: white;
+    padding: 0.1rem 1rem; 
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    border-radius: 0px;
+    font-weight: bold;
+  }
+    
+    .button:hover,
+    .button:active {
+      background-color: #33ada3;
+    }
+    .icon {
+      width: 1rem; /* Adjust the width and height to reduce the icon size */
+      height: 1rem;
+      margin-right: 0.5rem;
+    }
+    
+    
+    .badge {
+      background-color: #8bb483;
+      padding: 0.25rem 0.75rem; /* Adjust the padding values to reduce the badge size */
+      border-radius: 25px;
+      margin-left: 0.5rem; /* Adjust the margin to reduce the spacing between the badge and the button text */
+      font-weight: bold;
+    }
+    
+    .button:hover .badge,
+    .button:active .badge {
+      background-color: #73049e;
+    }
+    

@@ -1,0 +1,26 @@
+.image-slider {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .image-slider img {
+    width: 300px;
+    height: auto;
+    margin: 12px 70px;
+    object-fit: contain;
+  }
+  
+  .slider-btn {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 172px 23px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .slider-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
